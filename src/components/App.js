@@ -5,7 +5,7 @@ import Dashboard from "./Dashboard"
 import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
+import Login from "./Login"
 //start over at the routing part that wasn't working for some reason when I stopped
 
 
@@ -20,6 +20,7 @@ function App() {
             <Routes>
             <Route exact path = "/" element = {<Dashboard/>} />
             <Route path = "/signup" element = {<Signup/>} />
+            <Route path = "/login" element = {<Login/>} />
             </Routes>
           </AuthProvider>
 
