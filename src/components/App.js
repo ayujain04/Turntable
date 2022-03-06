@@ -1,9 +1,13 @@
 
 import React from "react"
 import Signup from "./Signup"
+import Dashboard from "./Dashboard"
 import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+//start over at the routing part that wasn't working for some reason when I stopped
+
 
 function App() {
   return (
@@ -11,17 +15,19 @@ function App() {
 <Container className = "d-flex align-items-center justify-content-center"
     style = {{ minHeight: "100vh" }}>
       <div className = "w-100" style = {{ maxWidth: "400px" }}>
-      <Router>
-        <AuthProvider>
-          <Routes>
-            <Route path ="/signup" component = {Signup}/>
-          </Routes>
+        <Router>
+          <AuthProvider>
+            <Routes>
+            <Route exact path = "/" element = {<Dashboard/>} />
+            <Route path = "/signup" element = {<Signup/>} />
+            </Routes>
+          </AuthProvider>
 
-        </AuthProvider>
-      </Router>
-      <Signup/>
+        </Router>
         </div>
     </Container>
+
+
     
  
   )
