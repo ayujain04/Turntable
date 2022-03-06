@@ -1,9 +1,27 @@
 
 import React from 'react';
 import './App.css';
+import Signup from "./Signup"
+import { Container } from 'react-bootstrap'
 
 function App() {
-  return(
+  return (
+ <Container className = "d-flex align-items-center justif-content-center"
+ style ={{minHeight: "100vh"}}>
+   <div className = "w-100" styel = {{maxWidth: "400px"}}>
+   <Signup/>
+     </div>
+  
+ </Container>
+ 
+
+  
+  );
+}
+
+export default App;
+
+/*
     <>
     <div className="application">
         <h1>Apply to join TurnTable!</h1>
@@ -45,9 +63,5 @@ function App() {
     </p>
     </div>
       </>
-   
-  );
-}
-
-export default App;
-
+   */
+  
