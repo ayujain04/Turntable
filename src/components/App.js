@@ -5,7 +5,6 @@ import './App.css';
 function App() {
   return(
     <>
-  
     <div className="application">
         <h1>Apply to join TurnTable!</h1>
         <form>
@@ -45,7 +44,6 @@ function App() {
       Turntable's mission is to allow artists to sell shares of their royalties like they would be able to sell stocks in a major corporoation. If the artists wishes, they could pay dividends each "quarter," but this is not required. Currently, we have no artists selling their shares, but we are eager to work with artists to allow them to sell their shares using the TurnTable marketplace. If this sounds like a good method that you would like to use to raise capital and allow your fans to back you directly, please apply to be one of our first artists onboard. We would love to speak with you if you are interested and have any questions! Thanks, Ayush Jain, Paul Wiskow, and Michael Tu of the Turntable Team 
     </p>
     </div>
-      
       </>
    
   );
