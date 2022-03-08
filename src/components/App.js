@@ -6,7 +6,9 @@ import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from "./Login"
-
+import ProtectedRoutes from "./ProtectedRoute"
+//because Private route is an outlet, we can nest
+//our routes in there
 
 function App() {
   return (
@@ -17,9 +19,11 @@ function App() {
         <Router>
           <AuthProvider>
             <Routes>
-            <Route exact path = "/" element = {<Dashboard/>} />
             <Route path = "/signup" element = {<Signup/>} />
             <Route path = "/login" element = {<Login/>} />
+            <Route element = {<ProtectedRoutes/>} > 
+              <Route exact path = "/" element = {<Dashboard/>} />
+            </Route>
             </Routes>
           </AuthProvider>
 
