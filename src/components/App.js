@@ -7,7 +7,9 @@ import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from "./Login"
 import ProtectedRoutes from "./ProtectedRoute"
-//because Private route is an outlet, we can nest
+import ForgotPassword from "./ForgotPassword"
+import UpdateProfile from "./UpdateProfile"
+//because ProtectedRoutes is an outlet, we can nest
 //our routes in there
 
 function App() {
@@ -21,8 +23,10 @@ function App() {
             <Routes>
             <Route path = "/signup" element = {<Signup/>} />
             <Route path = "/login" element = {<Login/>} />
+            <Route path = "forgot-password" element = {<ForgotPassword/>}/>
             <Route element = {<ProtectedRoutes/>} > 
               <Route exact path = "/" element = {<Dashboard/>} />
+              <Route path = "/update-profile" element = {<UpdateProfile/>}/>
             </Route>
             </Routes>
           </AuthProvider>
