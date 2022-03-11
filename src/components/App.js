@@ -9,6 +9,7 @@ import Login from "./Login"
 import ProtectedRoutes from "./ProtectedRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
+import ArtistApplication from "./ArtistApplication"
 //because ProtectedRoutes is an outlet, we can nest
 //our routes in there
 
@@ -27,6 +28,7 @@ function App() {
             <Route element = {<ProtectedRoutes/>} > 
               <Route exact path = "/" element = {<Dashboard/>} />
               <Route path = "/update-profile" element = {<UpdateProfile/>}/>
+              <Route path = "/artist-application" element = {<ArtistApplication/>}/>
             </Route>
             </Routes>
           </AuthProvider>
