@@ -20,14 +20,13 @@ function App() {
     <React.Fragment>
      
 
-<Container className = "d-flex align-items-center justify-content-center"
-    style = {{ minHeight: "100vh" }}>
-      <div className = "w-100" style = {{ maxWidth: "400px" }}>
+
 
         <Router>
         <Navbar/>
           <AuthProvider>
             <Routes>
+          
             <Route path = "/signup" element = {<Signup/>} />
             <Route path = "/login" element = {<Login/>} />
             <Route path = "forgot-password" element = {<ForgotPassword/>}/>
@@ -40,8 +39,8 @@ function App() {
             </Routes>
           </AuthProvider>
         </Router>
-        </div>
-    </Container>
+        
+   
     </React.Fragment>
     
  
