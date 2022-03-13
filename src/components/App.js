@@ -11,6 +11,7 @@ import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import ArtistApplication from "./ArtistApplication"
 import Navbar from "./Navbar"
+import About from "./About"
 
 //because ProtectedRoutes is an outlet, we can nest
 //our routes in there
@@ -35,6 +36,8 @@ function App() {
               <Route exact path = "/" element = {<Dashboard/>} />
               <Route path = "/update-profile" element = {<UpdateProfile/>}/>
               <Route path = "/artist-application" element = {<ArtistApplication/>}/>
+              <Route path = "/about" element = {<About/>}/>
+
             </Route>
             </Routes>
           </AuthProvider>

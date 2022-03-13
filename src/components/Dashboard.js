@@ -3,6 +3,7 @@ import { Card, Button, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 
+//this is the home tab
 export default function Dashboard() {
     
     const [error, setError] = useState("")
@@ -22,6 +23,11 @@ export default function Dashboard() {
 
   return (
       <>
+        <Card>
+        <Card.Body>
+        <h2 className = "text-center mb-4">Welcome to Turntable!</h2>
+        </Card.Body>
+      </Card>
       <Card>
         <Card.Body>
         <h2 className = "text-center mb-4">Profile</h2>

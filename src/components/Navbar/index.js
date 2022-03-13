@@ -7,9 +7,15 @@ import {
   NavBtn,
   NavBtnLink,
 } from './NavbarElements';
+
+
+
   
 const Navbar = () => {
-  return (
+  
+ 
+  
+    return (
     <>
       <Nav>
         <Bars />
@@ -23,11 +29,12 @@ const Navbar = () => {
           <NavLink to='/artist-application' activeStyle>
             Artist Application
           </NavLink>
+          <NavLink to='/about' activeStyle>
+            About
+          </NavLink>
         
         </NavMenu>
-        <NavBtn>
-          <NavBtnLink to='/login'>Sign In</NavBtnLink>
-        </NavBtn>
+       
       </Nav>
     </>
   );
