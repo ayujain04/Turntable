@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function ArtistApplication() {
     const [loading, setLoading] = useState(false)
-    function handleSubmit(){
+    function handleSubmit(e){
 
     }
     return (
