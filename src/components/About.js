@@ -3,9 +3,9 @@ import React from 'react'
 export default function About() {
   return (
     <div>
-        <p>
-            Yoooooo welcome to the website brodie!
-        </p>
-    </div>
+    <h2>About Page</h2>
+    <p>Description of Turntables mission... </p>
+    
+  </div>
   )
 }
