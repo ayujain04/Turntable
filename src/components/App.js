@@ -2,7 +2,7 @@
 import React from "react"
 import Signup from "./Signup"
 import Dashboard from "./Dashboard"
-import { Container } from "react-bootstrap"
+import { Container, } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from "./Login"
@@ -12,9 +12,10 @@ import UpdateProfile from "./UpdateProfile"
 import ArtistApplication from "./ArtistApplication"
 import Navbar from "./Navbar"
 import About from "./About"
-
+import Contact from "./Contact"
 //because ProtectedRoutes is an outlet, we can nest
 //our routes in there
+// still need to build a "market route," but this is where the demo will go.
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
               <Route path = "/update-profile" element = {<UpdateProfile/>}/>
               <Route path = "/artist-application" element = {<ArtistApplication/>}/>
               <Route path = "/about" element = {<About/>}/>
+              <Route path = "/contact-us" element = {<Contact/>}/>
+        
 
             </Route>
             </Routes>
