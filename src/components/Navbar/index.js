@@ -4,10 +4,7 @@ import {
   NavLink,
   Bars,
   NavMenu,
-  NavBtn,
-  NavBtnLink,
 } from './NavbarElements';
-import { Container } from 'react-bootstrap'
 
 
 
@@ -23,9 +20,6 @@ const Navbar = () => {
         <NavMenu>
           <NavLink to='/' activeStyle>
             Home
-          </NavLink>
-          <NavLink to='/update-profile' activeStyle>
-            Update Profile
           </NavLink>
           <NavLink to='/artist-application' activeStyle>
             Artist Application
