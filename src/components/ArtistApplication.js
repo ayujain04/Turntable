@@ -1,39 +1,70 @@
 import React, { useState } from 'react'
-import { Form, Card, Alert, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Axios, db } from '../firebase'
+import './styled.scss'
 
-export default function ArtistApplication() {
-    const [loading, setLoading] = useState(false)
-    function handleSubmit(e){
+export default function ContactForm() {
+  const [formData, setFormData] = useState({})
 
-    }
-    return (
-    <Card>
-    <Card.Body>
-        <h2 className = "text-center mb-4">Apply to Sell Shares</h2>
-        <Form onSubmit = {handleSubmit}>
-            <Form.Group id = "artistName">
-                <Form.Label>Artist/Group Name</Form.Label>
-                <Form.Control type = "artistName"/>
-                </Form.Group>
-                <Form.Group id = "email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type = "email"/>
-                <Form.Group id = "years">
-                <Form.Label>How Many Years Have You All Been Artists?</Form.Label>
-                <Form.Control type = "years"/>
-                </Form.Group>
-                </Form.Group>
-            <p>One of the members of the Turntable will reach out to you to schedule a meeting within 48 hours. Thank you for applying!</p>
-                <Button disabled = {loading} className = "w-100" type = "submit">Submit Application</Button>
-        </Form>
-        <div className = "w-100 text-center mt-3"> 
-        <Link to = "/">Dashboard</Link>
-        </div>
-    </Card.Body>
+  const updateInput = e => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+  const handleSubmit = event => {
+    event.preventDefault()
+    sendEmail()
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    })
+  }
+  const sendEmail = () => {
+    Axios.post(
+      'https://us-central1-turntable-6a455.cloudfunctions.net/submit',
+      formData
+    )
+      .then(res => {
+        db.collection('emails').add({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          time: new Date(),
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
 
-
-</Card>
-
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          onChange={updateInput}
+          value={formData.name || ''}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={updateInput}
+          value={formData.email || ''}
+        />
+        <textarea
+          type="text"
+          name="message"
+          placeholder="Message"
+          onChange={updateInput}
+          value={formData.message || ''}
+        ></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </>
   )
 }
+

@@ -1,4 +1,8 @@
 import firebase from "firebase/compat/app"
+import 'firebase/compat/auth'
+import 'firebase/compat/database'
+import 'firebase/compat/firestore';
+import Axios from 'axios'
 import "firebase/compat/auth"
 
 const app = firebase.initializeApp({
@@ -13,4 +17,10 @@ const app = firebase.initializeApp({
 
 export const auth = app.auth() //gives us our authentication instance
 export default app //allows us to use firebase in our application
+
+const db = firebase.firestore()
+
+export { Axios, db }
+
+
 

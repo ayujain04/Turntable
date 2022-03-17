@@ -36,7 +36,16 @@ function App() {
 
               <Route exact path = "/" element = {<Dashboard/>} />
               <Route path = "/update-profile" element = {<UpdateProfile/>}/>
-              <Route path = "/artist-application" element = {<ArtistApplication/>}/>
+              <Route path = "/artist-application" element = {
+      <>         <ArtistApplication/>
+      <a
+        className = "App-link"
+        href = "https://reactjs.org"
+        target = "_blank"
+        rel = "noopener noreferrer"
+        >
+          </a></>
+              }/>
               <Route path = "/about" element = {<About/>}/>
               <Route path = "/contact-us" element = {<Contact/>}/>
         
