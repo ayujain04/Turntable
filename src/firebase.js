@@ -1,9 +1,7 @@
 import firebase from "firebase/compat/app"
 import 'firebase/compat/auth'
 import 'firebase/compat/database'
-import 'firebase/compat/firestore';
-import Axios from 'axios'
-import "firebase/compat/auth"
+import 'firebase/compat/firestore'
 
 const app = firebase.initializeApp({
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -12,15 +10,13 @@ const app = firebase.initializeApp({
     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET ,
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID ,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID, 
 })
 
 export const auth = app.auth() //gives us our authentication instance
-export default app //allows us to use firebase in our application
 
-const db = firebase.firestore()
 
-export { Axios, db }
+export default app.database().ref();
 
 
 
