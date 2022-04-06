@@ -11,18 +11,18 @@ export default function ArtistApplication() {
   const [state, setState] = useState({
     name: "",
     email: "",
-    subject: "", 
-    message: ""
+    genre: "", 
+    musicLink: ""
   })
 
-  const {name, email, subject, message} = state; 
+  const {name, email, genre, musicLink} = state; 
   const handleSubmit = (e) => {
       e.preventDefault();
-      if(!name || !email || !subject || !message) {
+      if(!name || !email || !genre || !musicLink) {
         toast.error("Please provide a value in each input field")
       } else {
         app.child("contacts").push(state);
-        setState({name: "", email: "", subject: "", message: ""}); 
+        setState({name: "", email: "", genre: "", musicLink: ""}); 
         toast.success("Thank you! The form was submitted successfully!")
       }
   }
@@ -46,7 +46,7 @@ export default function ArtistApplication() {
                 <div className = "row no-gutters">
                   <div className = "col-md-6">
                       <div className = "contact-wrap w-100 p-lg-5 p-4">
-                        <h3 className = "mb-4">Send us a message</h3>
+                        <h3 className = "mb-4">Artist Application</h3>
                         <form id = "contactForm" className = "contactForm" onSubmit = {handleSubmit} >
                               <div className="row">
                                 <div className ="col-md-12">
@@ -55,7 +55,7 @@ export default function ArtistApplication() {
                                       type = "text"
                                       className = "form-control"
                                       name = "name"
-                                      placeholder = "Name"
+                                      placeholder = "Artist Name?"
                                       onChange = {handleInputChange}
                                       value = {name}
                                       />
@@ -67,7 +67,7 @@ export default function ArtistApplication() {
                                       type = "email"
                                       className = "form-control"
                                       name = "email"
-                                      placeholder = "Email"
+                                      placeholder = "Email?"
                                       onChange = {handleInputChange}
                                       value = {email}
                                       />
@@ -78,10 +78,10 @@ export default function ArtistApplication() {
                                       <input 
                                       type = "text"
                                       className = "form-control"
-                                      name = "subject"
-                                      placeholder = "Subject"
+                                      name = "genre"
+                                      placeholder = "Genre?"
                                       onChange = {handleInputChange}
-                                      value = {subject}
+                                      value = {genre}
                                       />
                                       </div>
                                   </div>
@@ -90,18 +90,18 @@ export default function ArtistApplication() {
                                       <textarea 
                                       type = "text"
                                       className = "form-control"
-                                      name = "message"
-                                      placeholder = "Message"
+                                      name = "musicLink"
+                                      placeholder = "Link to your music"
                                       cols = "30"
-                                      rows = "6"
+                                      rows = "1"
                                       onChange = {handleInputChange}
-                                      value = {message}
+                                      value = {musicLink}
                                       ></textarea>
                                       </div>
                                   </div>
                                   <div className='col-md-12'>
                                       <div className = "form-group">
-                                        <input  type = "submit" value = "Send Message" className = "btn btn-primary" />
+                                        <input  type = "submit" value = "Submit application" className = "btn btn-primary" />
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@ export default function ArtistApplication() {
                            </div>
                            <div className = "text pl-3">
                               <p>
-                                <span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016
+                                <span>Address:</span> Virginia Beach, Virginia
                               </p>
                            </div>
                           </div>
@@ -129,7 +129,7 @@ export default function ArtistApplication() {
                            <div className = "text pl-3">
                               <p>
                                 <span>Phone:</span>
-                                <a href="tel://123456789">+ 1235 7893 32 </a>
+                                <a href="tel://123456789">757-406-5879 </a>
                               </p>
                            </div>
                           </div>

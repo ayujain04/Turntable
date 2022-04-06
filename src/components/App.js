@@ -10,12 +10,13 @@ import ProtectedRoutes from "./ProtectedRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import ArtistApplication from "./ArtistApplication"
-import Navbar from "./Navbar"
 import About from "./About"
-import Contact from "./Contact"
+import Market from "./Market"
+import Navbar from "./Navbar/Navbar"
 //because ProtectedRoutes is an outlet, we can nest
 //our routes in there
 // still need to build a "market route," but this is where the demo will go.
+//   /* <Navbar/> */ goes under Router. 
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
 
 
         <Router>
-        <Navbar/>
+            <Navbar/>
           <AuthProvider>
             <Routes>
           
@@ -46,8 +47,8 @@ function App() {
         >
           </a></>
               }/>
+               <Route path = "/market" element = {<Market/>}/>
               <Route path = "/about" element = {<About/>}/>
-              <Route path = "/contact-us" element = {<Contact/>}/>
         
 
             </Route>
