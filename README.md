@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+This was iteration one (MVP) of a web application, turntable. The premise of it was to create a stock market for artists using NFTS. I pitched it to a few startup accelerators, but for now decided to put the project on hold. Still learned a lot about taking something from 0 to 1 and also how to use React and Firebase.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 
 ## Available Scripts
 
